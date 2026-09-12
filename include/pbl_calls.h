@@ -49,7 +49,8 @@
 // x3 (p4) is moved to x19 in function entry
 #define FUN_00305cc0(p1, p2, p3, p4) (((uint32_t (*)(long *, int, long *, int))0x305cc0)((p1), (p2), (p3), (p4)))
 #define FUN_00305610(p1, p2, p3, p4) (((uintptr_t (*)(unsigned long **, unsigned long *, long, unsigned long **))0x305610) ((p1), (p2), (p3), (p4)))
-
+#define boot_sahara_handle_tx ((uint32_t (*)(uint8_t *, uint32_t, uint32_t *))0x308b40)
+#define pbl_clean_and_invalidate_cache ((uint64_t (*)(uintptr_t, uintptr_t))0x32495c)
 
 // apps_main_procs ftbl
 #define pbl_state_init(state) ((void (*)(uintptr_t))0x30e984)((uintptr_t)(state))
