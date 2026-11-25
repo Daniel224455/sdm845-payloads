@@ -1,9 +1,14 @@
+ifeq ($(PAYLOAD),)
+$(error error: must specify PAYLOAD)
+endif
+
 SRC	= $(PAYLOAD)/$(PAYLOAD).c
 OBJ	= $(PAYLOAD)/$(PAYLOAD).o
 BIN	= $(PAYLOAD)/$(PAYLOAD).bin
 
-CC = aarch64-linux-gnu-gcc
-OBJCOPY	= aarch64-linux-gnu-objcopy
+CROSS_COMPILE ?= aarch64-linux-gnu-
+CC = $(CROSS_COMPILE)gcc
+OBJCOPY	= $(CROSS_COMPILE)objcopy
 
 CFLAGS	=	-c	-O2	\
 			-ffreestanding	-fno-builtin	-nostdlib	\
